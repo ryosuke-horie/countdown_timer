@@ -9,7 +9,7 @@
 
     var startTime;
     var timeLeft;
-    var timeToCountDown = 4 * 1000;
+    var timeToCountDown = 0;
     var timerId;
 
     function updateTimer(t) {
@@ -42,4 +42,22 @@
         startTime = Date.now();
         countDown();
     });
+
+min.addEventListener('click', function () {
+    timeToCountDown += 60 * 1000;
+    updateTimer(timeToCountDown);
+});
+
+sec.addEventListener('click', function () {
+    timeToCountDown += 1000;
+    updateTimer(timeToCountDown);
+});
+
+reset.addEventListener('click', function () {
+    timeToCountDown = 0;
+    updateTimer(timeToCountDown);
+});
+
+
+
 })();
